@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from "@angular/core";
 import {ActivatedRouteSnapshot} from "@angular/router";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-counter',
@@ -8,6 +9,14 @@ import {ActivatedRouteSnapshot} from "@angular/router";
 
 export class CounterComponent {
   counter: number = 0;
+  public form! : FormGroup;
+
+  constructor(private fb:FormBuilder) {
+    this.form = fb.group({
+      login : ['',Validators.required],
+      email:['']
+    })
+  }
 
   @Output() counterEmitter = new EventEmitter<number>();
 
