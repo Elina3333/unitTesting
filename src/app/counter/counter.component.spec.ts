@@ -17,4 +17,11 @@ describe('CounterComponent', () => {
     counterComponent.decrement();
     expect(counterComponent.counter).toBe(-1);
   });
+
+  it('should increment value by event emitter', function () {
+    let result : number = 0;
+    counterComponent.counterEmitter.subscribe(v => result = v);
+    counterComponent.increment();
+    expect(result).toBe(1);
+  });
 })
