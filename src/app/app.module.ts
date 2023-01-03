@@ -5,16 +5,25 @@ import {AppComponent} from './app.component';
 import {CounterComponent} from "./counter/counter.component";
 import {FormsModule} from "@angular/forms";
 import {PostsComponent} from "./posts/posts.component";
+import { RoutingComponent } from './routing/routing.component';
+import {RouterLink, RouterOutlet} from "@angular/router";
+import { NavbarComponent } from './navbar/navbar.component';
+import { ColorDirective } from './directives/color.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
-    PostsComponent
+    PostsComponent,
+    RoutingComponent,
+    NavbarComponent,
+    ColorDirective
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterOutlet,
+    RouterLink
   ],
   providers: [],
   bootstrap: [AppComponent]
